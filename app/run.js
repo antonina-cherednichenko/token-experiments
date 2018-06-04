@@ -56,7 +56,10 @@ web3.eth.getAccounts(function(err, accs) {
        return tokenI.getBalance({from:part1})
      })
      .then(res => console.log("balance = ", res))
-    .then(() => {
+     .then(() => tokenI.approve(part2, 10, {from: part1, gas: 6000000}))
+     .then(() => tokenI.transfer(part2, 10, {from: part1}))
+     .then(() => {
+       console.log("hellooooo")
       return operationsI.sendTokens(tokenI.address, part2, 10, {from: part1, gas: 6000000})
     })
     .then(res => console.log("RES = ", res))

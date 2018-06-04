@@ -21,7 +21,8 @@ contract TokenOperations {
         //tokensTransferable(token, msg.sender, receiver, amount)
         returns (bool res)
     {
-        if (!ERC20(token).transfer(receiver, amount))
+        
+        if (!ERC20(token).transferFrom(msg.sender, receiver, amount))
             revert();
         return true;
 
