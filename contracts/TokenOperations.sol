@@ -28,13 +28,3 @@ contract TokenOperations {
     }
 
 }
-
-
-
-
-        returns(bytes32 hashed)
-    {
-        return sha256(secret);
-    }
-
-}

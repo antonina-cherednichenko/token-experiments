@@ -14,4 +14,8 @@ contract TestToken is StandardToken {
         balances[msg.sender] = _initialBalance;
         totalSupply_ = _initialBalance;
     }
+
+    function getBalance() public view returns (uint res) {
+      return balances[msg.sender];
+    }
 }
